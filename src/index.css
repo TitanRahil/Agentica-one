@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-midnight: 10 17 40;
+    --color-icy: 56 189 248;
+    --color-sky-canvas: 234 242 248;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #EAF2F8;
+    color: #0A1128;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Specular Glass Surfaces & Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px rgba(10, 17, 40, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(10, 17, 40, 0.03);
+}
+
+.glass-pill-nav {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(10, 17, 40, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.glass-pill-button {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 246, 250, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 10px 25px rgba(10, 17, 40, 0.08),
+    0 2px 4px rgba(10, 17, 40, 0.04),
+    inset 0 1px 1px #ffffff,
+    inset 0 -1px 2px rgba(56, 189, 248, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.glass-pill-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 16px 36px rgba(10, 17, 40, 0.12),
+    0 4px 8px rgba(10, 17, 40, 0.06),
+    inset 0 1px 2px #ffffff,
+    0 0 24px rgba(56, 189, 248, 0.35);
+}
+
+.glass-pill-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Light Gleam Sweep effect */
+.gleam-sheen {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left 0.75s ease-in-out;
+}
+
+.glass-pill-button:hover .gleam-sheen {
+  left: 200%;
+}
+
+/* Subtle Technical Grid Background */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(10, 17, 40, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 17, 40, 0.03) 1px, transparent 1px);
+}
+
+.bg-tech-grid-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(10, 17, 40, 0.07) 1px, transparent 1px);
+}
+
+/* Glass Card with Hover Lift */
+.glass-card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(10, 17, 40, 0.08), 0 2px 8px rgba(10, 17, 40, 0.03);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EAF2F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C2CEE3;
+  border-radius: 9999px;
+  border: 2px solid #EAF2F8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94AACC;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
