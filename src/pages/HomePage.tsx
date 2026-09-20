@@ -42,7 +42,7 @@ export const HomePage: React.FC = () => {
         className="absolute top-0 inset-x-0 pointer-events-none mix-blend-multiply opacity-70 z-0"
         style={{
           height: 'calc(100vh + 100px)',
-          backgroundImage: `url('/atmospheric_cloud_backdrop.jpg')`,
+          backgroundImage: `url('/atmospheric_cloud_backdrop.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) calc(100vh - 20px), transparent calc(100vh + 100px))',
@@ -53,45 +53,48 @@ export const HomePage: React.FC = () => {
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: HERO VIEWPORT (Stitch Ethereal Cloudscape)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col justify-between pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section className="relative min-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-transparent">
         {/* Ambient Radial Gradient for Daylight Glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-white/90 via-sky-mist/60 to-transparent blur-3xl pointer-events-none -z-0" />
 
         {/* Hero Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
             {/* Left Content (7 Cols) - Moved Upward & Sized Proportionally */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left -translate-y-4 sm:-translate-y-6 lg:-translate-y-8"
+              className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left -translate-y-2 sm:-translate-y-6 lg:-translate-y-8"
             >
-              {/* Sleek Eyebrow Header Line (No Dash, Clean Tracking) */}
-              <div className="mb-5">
-                <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-[0.18em] text-midnight-600 uppercase">
-                  BESPOKE MULTI-AGENT AI SYSTEMS FOR SCALING ENTERPRISES
-                </span>
+              {/* Sleek Eyebrow Header Badge with Live Pulse */}
+              <div className="mb-4 sm:mb-5">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-midnight-900/15 shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] text-midnight uppercase">
+                    BESPOKE MULTI-AGENT AI SYSTEMS
+                  </span>
+                </div>
               </div>
 
-              {/* Main Headline - Bold & Enlarged */}
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] tracking-tight text-midnight leading-[1.06]">
+              {/* Main Headline - Fluid Responsive Typography */}
+              <h1 className="font-heading font-extrabold text-[2.35rem] xs:text-[2.75rem] sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] tracking-tight text-midnight leading-[1.04]">
                 UNIQUELY PERSONALISED FOR YOUR BUSINESS
               </h1>
 
-              {/* Sub-headline - Slightly smaller, crisp typography */}
-              <p className="mt-5 text-sm sm:text-base lg:text-[17px] text-midnight-700 max-w-xl font-sans leading-relaxed">
+              {/* Sub-headline - Crisp Typography & Focused Density */}
+              <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-[17px] text-midnight-700 max-w-xl font-sans leading-relaxed px-1 sm:px-0">
                 We architect deterministic multi-agent AI systems for scaling enterprises ($1M–$50M ARR). No fragile chatbot wrappers. No generic SaaS. Just industrial-grade automation engineered for your exact operational bottlenecks.
               </p>
 
               {/* Specular CTA Row */}
-              <div className="mt-7 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+              <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
                 <SpecularButton
                   to="/solutions"
                   size="md"
                   variant="dark"
                   icon={<ArrowRight className="w-4 h-4" />}
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto shadow-[0_10px_30px_rgba(10,17,40,0.18)]"
                 >
                   Explore Flagship Blueprints
                 </SpecularButton>
@@ -105,16 +108,16 @@ export const HomePage: React.FC = () => {
                 </SpecularButton>
               </div>
 
-              {/* Enterprise Trust Micro-Credentials */}
-              <div className="mt-9 pt-6 border-t border-white/80 w-full flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs font-mono text-midnight-600">
-                <span className="flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5 text-icy-deep" /> SOC2 Type II Aligned
+              {/* Enterprise Trust Micro-Credentials (Responsive Glass Badges) */}
+              <div className="mt-8 sm:mt-9 pt-5 sm:pt-6 border-t border-midnight-900/10 w-full flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-midnight-700">
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0" /> SOC2 Type II Aligned
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <Lock className="w-3.5 h-3.5 text-emerald-600" /> Zero Data Retention
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Zero Data Retention
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <Server className="w-3.5 h-3.5 text-midnight-600" /> Private VPC & Dedicated Tenant
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Server className="w-3.5 h-3.5 text-midnight-600 shrink-0" /> Dedicated Tenant VPC
                 </span>
               </div>
             </motion.div>
@@ -124,13 +127,12 @@ export const HomePage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex justify-center lg:justify-end"
+              className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-2 lg:mt-0"
             >
               <StitchHeroVisual />
             </motion.div>
           </div>
         </div>
-
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
@@ -311,7 +313,7 @@ export const HomePage: React.FC = () => {
         <div
           className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-80 z-0"
           style={{
-            backgroundImage: `url('/atmospheric_cloud_backdrop.jpg')`,
+            backgroundImage: `url('/atmospheric_cloud_backdrop.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             maskImage:
