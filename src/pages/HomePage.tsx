@@ -67,14 +67,12 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left -translate-y-2 sm:-translate-y-6 lg:-translate-y-8"
             >
-              {/* Sleek Eyebrow Header Badge with Live Pulse */}
-              <div className="mb-4 sm:mb-5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-midnight-900/15 shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] text-midnight uppercase">
-                    BESPOKE MULTI-AGENT AI SYSTEMS
-                  </span>
-                </div>
+              {/* Sleek Plain Eyebrow Header with Live Pulse */}
+              <div className="mb-4 sm:mb-5 flex items-center justify-center lg:justify-start gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-midnight-600 uppercase">
+                  BESPOKE MULTI-AGENT AI SYSTEMS
+                </span>
               </div>
 
               {/* Main Headline - Fluid Responsive Typography */}
@@ -108,8 +106,8 @@ export const HomePage: React.FC = () => {
                 </SpecularButton>
               </div>
 
-              {/* Enterprise Trust Micro-Credentials (Responsive Glass Badges) */}
-              <div className="mt-8 sm:mt-9 pt-5 sm:pt-6 border-t border-midnight-900/10 w-full flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-midnight-700">
+              {/* Enterprise Trust Micro-Credentials (Desktop: bottom of left column) */}
+              <div className="hidden lg:flex mt-8 sm:mt-9 pt-5 sm:pt-6 border-t border-midnight-900/10 w-full flex-wrap items-center justify-start gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-midnight-700">
                 <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
                   <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0" /> SOC2 Type II Aligned
                 </span>
@@ -127,9 +125,22 @@ export const HomePage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex justify-center lg:justify-end w-full mt-2 lg:mt-0"
+              className="lg:col-span-5 flex flex-col items-center lg:items-end w-full mt-4 lg:mt-0"
             >
               <StitchHeroVisual />
+
+              {/* Enterprise Trust Micro-Credentials (Mobile: positioned directly below the Robot visual) */}
+              <div className="flex lg:hidden mt-6 sm:mt-8 pt-5 border-t border-midnight-900/10 w-full flex-wrap items-center justify-center gap-2 text-[11px] font-mono text-midnight-700">
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0" /> SOC2 Type II Aligned
+                </span>
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Zero Data Retention
+                </span>
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
+                  <Server className="w-3.5 h-3.5 text-midnight-600 shrink-0" /> Dedicated Tenant VPC
+                </span>
+              </div>
             </motion.div>
           </div>
         </div>

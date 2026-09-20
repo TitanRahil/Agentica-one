@@ -7,7 +7,6 @@ import {
   Terminal,
 } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
-import { Badge } from '../components/ui/Badge';
 import { SpecularButton } from '../components/ui/SpecularButton';
 import { solutionsData } from '../data/solutions';
 
@@ -42,9 +41,11 @@ export const SolutionsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <Badge variant="glass" withDot>
-            ENTERPRISE ARCHITECTURE SPECIFICATIONS
-          </Badge>
+          <div className="mb-3">
+            <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+              ENTERPRISE ARCHITECTURE SPECIFICATIONS
+            </span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-midnight mt-4 tracking-tight">
             Deterministic Flagship Multi-Agent Systems
           </h1>
@@ -203,9 +204,11 @@ export const SolutionsPage: React.FC = () => {
         ───────────────────────────────────────────────────────────── */}
         <section className="mt-28">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <Badge variant="cyan" withDot>
-              SYSTEM OF RECORD CONNECTIVITY
-            </Badge>
+            <div className="mb-3">
+              <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+                SYSTEM OF RECORD CONNECTIVITY
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-midnight mt-3">
               Enterprise Integration Ecosystem
             </h2>

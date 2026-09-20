@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, Quote } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
-import { Badge } from '../components/ui/Badge';
 import { SpecularButton } from '../components/ui/SpecularButton';
 import { caseStudiesData } from '../data/caseStudies';
 
@@ -17,9 +16,11 @@ export const CaseStudiesPage: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <Badge variant="glass" withDot>
-            VERIFIED CLIENT CASE TEARDOWNS
-          </Badge>
+          <div className="mb-3">
+            <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+              VERIFIED CLIENT CASE TEARDOWNS
+            </span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-midnight mt-4 tracking-tight">
             Empirical Results in Scaling Enterprise Environments
           </h1>
@@ -165,9 +166,11 @@ export const CaseStudiesPage: React.FC = () => {
         ───────────────────────────────────────────────────────────── */}
         <section className="mt-28">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <Badge variant="navy" withDot>
-              PERFORMANCE SNAPSHOT
-            </Badge>
+            <div className="mb-3">
+              <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+                PERFORMANCE SNAPSHOT
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-midnight mt-3">
               Operational Velocity Benchmark
             </h2>

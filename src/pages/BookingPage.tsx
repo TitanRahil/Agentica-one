@@ -13,7 +13,6 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
-import { Badge } from '../components/ui/Badge';
 import { SpecularButton } from '../components/ui/SpecularButton';
 import confetti from 'canvas-confetti';
 
@@ -73,9 +72,11 @@ export const BookingPage: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="glass" withDot>
-            TECHNICAL WHITEBOARDING CHARTER
-          </Badge>
+          <div className="mb-3">
+            <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+              TECHNICAL WHITEBOARDING CHARTER
+            </span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-midnight mt-4 tracking-tight">
             Reserve Your 45-Minute Architecture Review
           </h1>

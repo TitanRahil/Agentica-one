@@ -8,7 +8,6 @@ import {
   FileCode2,
 } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
-import { Badge } from '../components/ui/Badge';
 import { SpecularButton } from '../components/ui/SpecularButton';
 import { methodologyStages, securityStandards } from '../data/methodology';
 
@@ -24,9 +23,11 @@ export const MethodologyPage: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <Badge variant="glass" withDot>
-            SYSTEMS ENGINEERING PROTOCOL
-          </Badge>
+          <div className="mb-3">
+            <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+              SYSTEMS ENGINEERING PROTOCOL
+            </span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-midnight mt-4 tracking-tight">
             The 4-Stage Deterministic Engineering Protocol
           </h1>
@@ -110,9 +111,11 @@ export const MethodologyPage: React.FC = () => {
         ───────────────────────────────────────────────────────────── */}
         <section className="mt-28">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <Badge variant="navy" withDot>
-              MATHEMATICAL RELIABILITY
-            </Badge>
+            <div className="mb-3">
+              <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+                MATHEMATICAL RELIABILITY
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-midnight mt-3">
               Deterministic Guardrail Architecture
             </h2>
@@ -159,9 +162,11 @@ export const MethodologyPage: React.FC = () => {
         ───────────────────────────────────────────────────────────── */}
         <section className="mt-28">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <Badge variant="cyan" withDot>
-              DEFENSE-GRADE SECURITY
-            </Badge>
+            <div className="mb-3">
+              <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+                DEFENSE-GRADE SECURITY
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-midnight mt-3">
               Zero-Trust Architecture Standards
             </h2>

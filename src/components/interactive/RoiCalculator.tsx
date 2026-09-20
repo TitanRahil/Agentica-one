@@ -80,9 +80,11 @@ export const RoiCalculator: React.FC = () => {
     <div id="roi-calculator" className="relative w-full max-w-5xl mx-auto scroll-mt-24">
       {/* Header */}
       <div className="text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/80 backdrop-blur-md border border-midnight-900/20 text-xs font-mono uppercase tracking-widest text-midnight-600 mb-4 shadow-xs">
-          <Calculator className="w-3.5 h-3.5 text-icy-deep" />
-          <span>Interactive Value Modeling Engine</span>
+        <div className="mb-2 sm:mb-3 text-center">
+          <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase inline-flex items-center gap-2">
+            <Calculator className="w-3.5 h-3.5 text-icy-deep" />
+            <span>INTERACTIVE VALUE MODELING ENGINE</span>
+          </span>
         </div>
         <h2 className="text-[clamp(2.4rem,5.5vw,4.5rem)] font-heading font-extrabold text-midnight tracking-tighter leading-[1.08] max-w-4xl mx-auto">
           Quantify Your Human Capital Velocity Unlocked
