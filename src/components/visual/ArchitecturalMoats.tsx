@@ -39,10 +39,18 @@ export const ArchitecturalMoats: React.FC = () => {
           </span>
         </div>
 
-        {/* Main Giant Headline (Guaranteed Single Line & Centered) */}
-        <div className="w-full flex justify-center text-center my-3 sm:my-4">
+        {/* Main Giant Headline - Desktop (100% Original Untouched) */}
+        <div className="hidden sm:flex w-full justify-center text-center my-3 sm:my-4">
           <h2 className="text-[clamp(3.5rem,9.5vw,9.8rem)] font-heading font-extrabold text-midnight tracking-tighter leading-none whitespace-nowrap text-center">
             Built for Production.
+          </h2>
+        </div>
+
+        {/* Main Giant Headline - Mobile Only */}
+        <div className="flex sm:hidden w-full justify-start text-left my-4">
+          <h2 className="text-[clamp(3.75rem,13.8vw,11.8rem)] font-heading font-extrabold text-midnight tracking-tight leading-[0.92] text-left">
+            <span className="block whitespace-nowrap">Built for </span>
+            <span className="block whitespace-nowrap">Production.</span>
           </h2>
         </div>
 

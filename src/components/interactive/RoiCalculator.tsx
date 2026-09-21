@@ -78,8 +78,8 @@ export const RoiCalculator: React.FC = () => {
 
   return (
     <div id="roi-calculator" className="relative w-full max-w-5xl mx-auto scroll-mt-24">
-      {/* Header */}
-      <div className="text-center mb-12 sm:mb-16">
+      {/* Header - Desktop (100% Original Untouched) */}
+      <div className="hidden sm:block text-center mb-12 sm:mb-16">
         <div className="mb-2 sm:mb-3 text-center">
           <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase inline-flex items-center gap-2">
             <Calculator className="w-3.5 h-3.5 text-icy-deep" />
@@ -94,27 +94,47 @@ export const RoiCalculator: React.FC = () => {
         </p>
       </div>
 
+      {/* Header - Mobile Only (3-Line Punchy Layout) */}
+      <div className="block sm:hidden text-left mb-8">
+        <div className="mb-2 text-left">
+          <span className="text-xs font-mono font-semibold tracking-[0.2em] text-midnight-500 uppercase inline-flex items-center gap-1.5">
+            <Calculator className="w-3.5 h-3.5 text-icy-deep" />
+            <span>INTERACTIVE VALUE MODELING ENGINE</span>
+          </span>
+        </div>
+        <div className="w-full flex justify-start text-left my-3">
+          <h2 className="text-[clamp(2.1rem,9.1vw,4.5rem)] font-heading font-extrabold text-midnight tracking-tight leading-[0.94] text-left">
+            <span className="block whitespace-nowrap">Quantify Your</span>
+            <span className="block whitespace-nowrap">Human Capital</span>
+            <span className="block whitespace-nowrap">Velocity Unlocked</span>
+          </h2>
+        </div>
+        <p className="mt-3 text-midnight-600 text-xs leading-relaxed text-left">
+          Calculate the direct billable hours and enterprise capital reclaimed by replacing manual administrative friction with deterministic multi-agent systems.
+        </p>
+      </div>
+
       {/* Main Calculator Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-stretch">
         {/* Left Column: Inputs (7 cols) */}
-        <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300">
+        <div className="lg:col-span-7 flex flex-col justify-between p-4 xs:p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300">
           <div>
             {/* Top Eyebrow */}
-            <span className="text-xs font-mono uppercase tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5 mb-6">
+            <span className="text-xs font-mono uppercase tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5 mb-4 sm:mb-6">
               <SlidersHorizontal className="w-3.5 h-3.5 text-icy-deep" />
               Operational Parameters & Scope
             </span>
 
-            <div className="space-y-7">
+            <div className="space-y-4 sm:space-y-7">
               {/* Input 1: Team Size Slider */}
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <label htmlFor={sliderId} className="flex items-center gap-2 text-sm font-semibold text-midnight">
-                    <Users className="w-4 h-4 text-icy-deep" />
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <label htmlFor={sliderId} className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-midnight">
+                    <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-icy-deep" />
                     <span>Knowledge Workers / Fee Earners</span>
                   </label>
-                  <span className="font-mono text-base sm:text-lg font-bold text-midnight bg-white/95 px-3.5 py-1 rounded-xl border border-midnight-900/20 shadow-2xs inline-flex items-center gap-1.5">
-                    {teamSize} <span className="text-xs font-sans text-midnight-500 font-normal">{teamSize >= 100 ? 'People+' : 'People'}</span>
+                  <span className="font-mono text-sm sm:text-lg font-bold text-midnight bg-white/95 px-2.5 py-0.5 sm:px-3.5 sm:py-1 rounded-lg sm:rounded-xl border border-midnight-900/20 shadow-2xs inline-flex items-center gap-1 sm:gap-1.5">
+                    {teamSize} <span className="text-[11px] sm:text-xs font-sans text-midnight-500 font-normal">{teamSize >= 100 ? 'People+' : 'People'}</span>
                   </span>
                 </div>
                 <input
@@ -125,9 +145,9 @@ export const RoiCalculator: React.FC = () => {
                   step="5"
                   value={teamSize}
                   onChange={(e) => setTeamSize(Number(e.target.value))}
-                  className="w-full h-2.5 bg-midnight-100 rounded-lg appearance-none cursor-pointer accent-midnight focus:outline-none"
+                  className="w-full h-2 sm:h-2.5 bg-midnight-100 rounded-lg appearance-none cursor-pointer accent-midnight focus:outline-none"
                 />
-                <div className="flex justify-between text-[11px] font-mono mt-2.5 gap-1">
+                <div className="flex justify-between text-[10px] sm:text-[11px] font-mono mt-2 sm:mt-2.5 gap-1">
                   {[
                     { val: 5, label: '5 Boutique' },
                     { val: 25, label: '25 Mid-Market' },
@@ -138,7 +158,7 @@ export const RoiCalculator: React.FC = () => {
                       key={tier.val}
                       type="button"
                       onClick={() => setTeamSize(tier.val)}
-                      className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                      className={`px-1.5 py-0.5 sm:px-2 rounded-md transition-all cursor-pointer ${
                         teamSize === tier.val
                           ? 'bg-midnight text-white font-semibold shadow-2xs'
                           : 'text-midnight-500 hover:text-midnight hover:bg-white/80'
@@ -152,10 +172,10 @@ export const RoiCalculator: React.FC = () => {
 
               {/* Input 2: Primary Bottleneck Pills */}
               <div>
-                <label className="block text-sm font-semibold text-midnight mb-3">
+                <label className="block text-xs sm:text-sm font-semibold text-midnight mb-2 sm:mb-3">
                   Select Primary Workflow Friction:
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5">
                   {bottlenecks.map((item) => {
                     const isSelected = selectedBottleneck === item.id;
                     const IconComponent =
@@ -170,13 +190,13 @@ export const RoiCalculator: React.FC = () => {
                         key={item.id}
                         type="button"
                         onClick={() => setSelectedBottleneck(item.id)}
-                        className={`text-left p-3.5 rounded-2xl border transition-all duration-200 flex flex-col justify-between cursor-pointer group ${
+                        className={`text-left p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border transition-all duration-200 flex flex-row sm:flex-col items-center sm:items-start justify-between cursor-pointer group ${
                           isSelected
                             ? 'bg-midnight text-white border-midnight shadow-md'
                             : 'bg-white/70 hover:bg-white/95 text-midnight border-midnight-900/20 shadow-2xs hover:border-midnight-900/40'
                         }`}
                       >
-                        <div className="flex items-center gap-2 mb-2">
+                        <div className="flex items-center gap-2 sm:mb-2">
                           <IconComponent
                             className={`w-3.5 h-3.5 shrink-0 ${
                               isSelected ? 'text-icy' : 'text-midnight-600 group-hover:text-midnight'
@@ -185,7 +205,7 @@ export const RoiCalculator: React.FC = () => {
                           <span className="text-xs font-semibold leading-snug">{item.label}</span>
                         </div>
                         <span
-                          className={`text-[10px] font-mono mt-1 ${
+                          className={`text-[10px] font-mono shrink-0 sm:mt-1 ${
                             isSelected ? 'text-icy font-medium' : 'text-midnight-500'
                           }`}
                         >
@@ -197,8 +217,8 @@ export const RoiCalculator: React.FC = () => {
                 </div>
 
                 {/* Polished Active Description Pill */}
-                <div className="mt-3.5 p-3 rounded-xl bg-white/70 border border-midnight-900/15 text-xs text-midnight-700 flex items-start gap-2 shadow-2xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-icy-deep mt-1.5 shrink-0" />
+                <div className="mt-2.5 sm:mt-3.5 p-2.5 sm:p-3 rounded-xl bg-white/70 border border-midnight-900/15 text-[11px] sm:text-xs text-midnight-700 flex items-start gap-2 shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-icy-deep mt-1 shrink-0" />
                   <p className="leading-relaxed font-sans">{currentBottleneck.description}</p>
                 </div>
               </div>
@@ -206,9 +226,9 @@ export const RoiCalculator: React.FC = () => {
           </div>
 
           {/* Guarantee footer */}
-          <div className="mt-8 pt-5 border-t border-midnight-900/20 flex items-center justify-between gap-3 text-xs text-midnight-600">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+          <div className="mt-5 sm:mt-8 pt-3.5 sm:pt-5 border-t border-midnight-900/20 flex items-center justify-between gap-3 text-[11px] sm:text-xs text-midnight-600">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
               <span className="font-sans">Empirical time-study benchmarks from active deployments.</span>
             </div>
             <span className="hidden sm:inline-block text-[10px] font-mono text-midnight-400 uppercase tracking-wider font-semibold">
@@ -219,7 +239,7 @@ export const RoiCalculator: React.FC = () => {
 
         {/* Right Column: Output Ticker & PDF CTA (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-4">
-          <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300">
+          <div className="p-4 xs:p-5 sm:p-8 flex-1 flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-icy-deep" />
@@ -227,12 +247,12 @@ export const RoiCalculator: React.FC = () => {
               </span>
 
               {/* Annual Value Ticker */}
-              <div className="mt-4 pb-6 border-b border-midnight-900/20">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-midnight-500">
+              <div className="mt-3 sm:mt-4 pb-4 sm:pb-6 border-b border-midnight-900/20">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-midnight-500">
                   Annual Reclaimed Enterprise Value
                 </div>
                 <div className="flex items-baseline gap-1 mt-1">
-                  <span className="text-4xl sm:text-5xl font-heading font-bold text-midnight tracking-tight">
+                  <span className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-midnight tracking-tight">
                     ${annualSavings.toLocaleString()}
                   </span>
                   <span className="text-xs font-mono text-midnight-500 font-semibold">/ year</span>
@@ -240,36 +260,36 @@ export const RoiCalculator: React.FC = () => {
               </div>
 
               {/* Sub-metrics */}
-              <div className="grid grid-cols-2 gap-4 my-6">
-                <div className="p-3.5 rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs">
-                  <div className="flex items-center gap-1.5 text-midnight-600 text-xs font-medium">
-                    <Clock className="w-3.5 h-3.5 text-icy-deep" />
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-4 my-3.5 sm:my-6">
+                <div className="p-2.5 xs:p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs">
+                  <div className="flex items-center gap-1 text-midnight-600 text-[11px] sm:text-xs font-medium">
+                    <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-icy-deep" />
                     <span>Monthly Hours</span>
                   </div>
-                  <div className="text-xl sm:text-2xl font-mono font-bold text-midnight mt-1">
+                  <div className="text-lg sm:text-2xl font-mono font-bold text-midnight mt-1">
                     {totalMonthlyHours.toLocaleString()} hrs
                   </div>
-                  <div className="text-[10px] text-midnight-500 mt-0.5">Direct labor capacity</div>
+                  <div className="text-[9px] sm:text-[10px] text-midnight-500 mt-0.5">Direct labor capacity</div>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs">
-                  <div className="flex items-center gap-1.5 text-midnight-600 text-xs font-medium">
-                    <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="p-2.5 xs:p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs">
+                  <div className="flex items-center gap-1 text-midnight-600 text-[11px] sm:text-xs font-medium">
+                    <DollarSign className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-600" />
                     <span>Team Equivalent</span>
                   </div>
-                  <div className="text-xl sm:text-2xl font-mono font-bold text-midnight mt-1">
+                  <div className="text-lg sm:text-2xl font-mono font-bold text-midnight mt-1">
                     {Math.max(1, Math.round(teamSize * 0.28))} FTEs
                   </div>
-                  <div className="text-[10px] text-midnight-500 mt-0.5">Capacity unlocked</div>
+                  <div className="text-[9px] sm:text-[10px] text-midnight-500 mt-0.5">Capacity unlocked</div>
                 </div>
               </div>
             </div>
 
             {/* Email Report or Direct Booking */}
-            <div className="pt-2">
+            <div className="pt-1 sm:pt-2">
               <AnimatePresence mode="wait">
                 {!emailSubmitted ? (
-                  <form onSubmit={handleCelebrate} className="space-y-3">
+                  <form onSubmit={handleCelebrate} className="space-y-2 sm:space-y-3">
                     <label className="text-xs font-medium text-midnight-700 block">
                       Receive custom architecture roadmap for this model:
                     </label>
@@ -280,14 +300,14 @@ export const RoiCalculator: React.FC = () => {
                         placeholder="work@company.com"
                         value={emailInput}
                         onChange={(e) => setEmailInput(e.target.value)}
-                        className="flex-1 px-4 py-2.5 rounded-full bg-white/95 border border-midnight-900/20 text-xs text-midnight placeholder:text-midnight-400 focus:outline-none focus:ring-2 focus:ring-midnight shadow-2xs"
+                        className="flex-1 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white/95 border border-midnight-900/20 text-xs text-midnight placeholder:text-midnight-400 focus:outline-none focus:ring-2 focus:ring-midnight shadow-2xs"
                       />
                       <button
                         type="submit"
-                        className="p-2.5 rounded-full bg-midnight text-white hover:bg-midnight-800 transition-colors shadow-sm shrink-0 cursor-pointer"
+                        className="p-2 sm:p-2.5 rounded-full bg-midnight text-white hover:bg-midnight-800 transition-colors shadow-sm shrink-0 cursor-pointer"
                         title="Send roadmap"
                       >
-                        <Send className="w-4 h-4" />
+                        <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </button>
                     </div>
                   </form>
@@ -303,12 +323,12 @@ export const RoiCalculator: React.FC = () => {
                 )}
               </AnimatePresence>
 
-              <div className="mt-4">
+              <div className="mt-3 sm:mt-4">
                 <SpecularButton
                   to="/book"
                   size="md"
                   variant="dark"
-                  className="w-full justify-center"
+                  className="w-full justify-center text-xs sm:text-sm py-2.5 sm:py-3"
                   icon={<ArrowRight className="w-4 h-4" />}
                 >
                   Schedule 45-Min Architecture Review

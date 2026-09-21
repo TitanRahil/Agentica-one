@@ -31,10 +31,33 @@ export const PersonalisedScaleTransition: React.FC = () => {
           </div>
         </div>
 
-        {/* Giant Screen-Filling Headline */}
-        <h2 className="text-[clamp(3.6rem,9.2vw,10.2rem)] font-heading font-extrabold text-midnight tracking-tighter leading-none text-center w-full select-none flex flex-col gap-3 sm:gap-5 lg:gap-6">
+        {/* Giant Screen-Filling Headline - Desktop (Original untouched) */}
+        <h2 className="hidden sm:flex text-[clamp(3.6rem,9.2vw,10.2rem)] font-heading font-extrabold text-midnight tracking-tighter leading-none text-center w-full select-none flex-col gap-3 sm:gap-5 lg:gap-6">
           <span className="block whitespace-nowrap">Uniquely Engineered.</span>
           <span className="block whitespace-nowrap text-midnight/90">Infinitely Scalable.</span>
+        </h2>
+
+        {/* Giant Screen-Filling Headline - Mobile Only */}
+        <h2 className="flex sm:hidden text-midnight tracking-tight leading-none w-full select-none flex-col gap-2 text-center">
+          {/* Pair 1: Uniquely (refined weight) | Engineered. (calibrated scale on mobile) */}
+          <span className="w-full flex flex-col text-center">
+            <span className="block text-center font-heading font-normal text-midnight-600 text-[clamp(2.35rem,9.5vw,4.5rem)] leading-tight whitespace-nowrap">
+              Uniquely
+            </span>
+            <span className="block text-center font-heading font-extrabold text-midnight text-[clamp(3.35rem,13.2vw,10.2rem)] leading-[0.92] whitespace-nowrap">
+              Engineered.
+            </span>
+          </span>
+
+          {/* Pair 2: Infinitely (refined weight) | Scalable. (larger on mobile) */}
+          <span className="w-full flex flex-col text-center">
+            <span className="block text-center font-heading font-normal text-midnight-600 text-[clamp(2.35rem,9.5vw,4.5rem)] leading-tight whitespace-nowrap">
+              Infinitely
+            </span>
+            <span className="block text-center font-heading font-extrabold text-midnight text-[clamp(3.85rem,15vw,10.2rem)] leading-[0.9] whitespace-nowrap">
+              Scalable.
+            </span>
+          </span>
         </h2>
 
         {/* Center-Aligned Spread Supporting Text Below Header */}

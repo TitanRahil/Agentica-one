@@ -67,26 +67,32 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left -translate-y-2 sm:-translate-y-6 lg:-translate-y-8"
             >
-              {/* Sleek Plain Eyebrow Header with Live Pulse */}
-              <div className="mb-4 sm:mb-5 flex items-center justify-center lg:justify-start gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-midnight-600 uppercase">
-                  BESPOKE MULTI-AGENT AI SYSTEMS
+              {/* Sleek Plain Eyebrow Header (No Dot, Responsive Tracking) */}
+              <div className="mb-3 sm:mb-5 text-center lg:text-left">
+                <span className="text-xs sm:text-[13px] font-mono font-medium tracking-[0.22em] sm:tracking-[0.25em] text-midnight-600 uppercase">
+                  BESPOKE MULTI-AGENT AI SYSTEMS<span className="hidden sm:inline"> FOR SCALING ENTERPRISES</span>
                 </span>
               </div>
 
-              {/* Main Headline - Fluid Responsive Typography */}
-              <h1 className="font-heading font-extrabold text-[2.35rem] xs:text-[2.75rem] sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] tracking-tight text-midnight leading-[1.04]">
-                UNIQUELY PERSONALISED FOR YOUR BUSINESS
+              {/* Main Headline - Guaranteed Exactly 3 Lines & Maximized Visual Impact */}
+              <h1 className="font-heading font-extrabold text-[clamp(2.32rem,9.8vw,4.65rem)] sm:text-[3.6rem] lg:text-[4.15rem] xl:text-[4.65rem] tracking-[-0.03em] sm:tracking-tight text-midnight leading-[1.01] sm:leading-[1.02]">
+                <span className="block whitespace-nowrap">UNIQUELY</span>
+                <span className="block whitespace-nowrap">PERSONALISED FOR</span>
+                <span className="block whitespace-nowrap">YOUR BUSINESS</span>
               </h1>
 
               {/* Sub-headline - Crisp Typography & Focused Density */}
-              <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-[17px] text-midnight-700 max-w-xl font-sans leading-relaxed px-1 sm:px-0">
+              <p className="mt-3 sm:mt-5 text-sm sm:text-base lg:text-[17px] text-midnight-700 max-w-xl font-sans leading-relaxed px-1 sm:px-0">
                 We architect deterministic multi-agent AI systems for scaling enterprises ($1M–$50M ARR). No fragile chatbot wrappers. No generic SaaS. Just industrial-grade automation engineered for your exact operational bottlenecks.
               </p>
 
+              {/* Mobile-Only Robot Visual (Elevated & Positioned smoothly above CTAs) */}
+              <div className="block lg:hidden w-full -mt-1 sm:mt-2 mb-2 sm:mb-4 flex justify-center overflow-visible -translate-y-2 sm:translate-y-0">
+                <StitchHeroVisual />
+              </div>
+
               {/* Specular CTA Row */}
-              <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
+              <div className="mt-2 sm:mt-7 flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
                 <SpecularButton
                   to="/solutions"
                   size="md"
@@ -106,41 +112,31 @@ export const HomePage: React.FC = () => {
                 </SpecularButton>
               </div>
 
-              {/* Enterprise Trust Micro-Credentials (Desktop: bottom of left column) */}
-              <div className="hidden lg:flex mt-8 sm:mt-9 pt-5 sm:pt-6 border-t border-midnight-900/10 w-full flex-wrap items-center justify-start gap-2 sm:gap-3 text-[11px] sm:text-xs font-mono text-midnight-700">
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0" /> SOC2 Type II Aligned
+              {/* Enterprise Trust Credentials (Clean Inline Typography, No Pills, No Scroll) */}
+              <div className="mt-7 sm:mt-9 pt-5 sm:pt-6 border-t border-midnight-900/10 w-full flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs font-mono text-midnight-600">
+                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0 stroke-[1.75]" />
+                  <span>SOC2 Type II Aligned</span>
                 </span>
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Zero Data Retention
+                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[1.75]" />
+                  <span>Zero Data Retention</span>
                 </span>
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Server className="w-3.5 h-3.5 text-midnight-600 shrink-0" /> Dedicated Tenant VPC
+                <span className="hidden sm:flex items-center gap-1.5 whitespace-nowrap">
+                  <Server className="w-3.5 h-3.5 text-midnight-500 shrink-0 stroke-[1.75]" />
+                  <span>Private VPC & Dedicated Tenant</span>
                 </span>
               </div>
             </motion.div>
 
-            {/* Right Visual Anchor (5 Cols): The 3D Robot */}
+            {/* Desktop Right Visual Anchor (5 Cols): The 3D Robot */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex flex-col items-center lg:items-end w-full mt-4 lg:mt-0"
+              className="hidden lg:flex lg:col-span-5 flex-col items-end w-full mt-0"
             >
               <StitchHeroVisual />
-
-              {/* Enterprise Trust Micro-Credentials (Mobile: positioned directly below the Robot visual) */}
-              <div className="flex lg:hidden mt-6 sm:mt-8 pt-5 border-t border-midnight-900/10 w-full flex-wrap items-center justify-center gap-2 text-[11px] font-mono text-midnight-700">
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Shield className="w-3.5 h-3.5 text-icy-deep shrink-0" /> SOC2 Type II Aligned
-                </span>
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Zero Data Retention
-                </span>
-                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-midnight-900/15 shadow-2xs">
-                  <Server className="w-3.5 h-3.5 text-midnight-600 shrink-0" /> Dedicated Tenant VPC
-                </span>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -209,7 +205,7 @@ export const HomePage: React.FC = () => {
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-sky-canvas">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
+          {/* Section Header (100% Original Untouched) */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
             <div>
               <div className="mb-2 sm:mb-3 text-left">
@@ -230,56 +226,56 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Shorter Case Study Cards Matching Estimated Return on Architecture */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
             {caseStudiesData.slice(0, 2).map((cs) => (
               <div
                 key={cs.id}
-                className="p-6 sm:p-8 flex flex-col justify-between rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 group"
+                className="p-4 xs:p-5 sm:p-8 flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 group"
               >
                 <div>
                   {/* Eyebrow + Timeframe */}
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-mono uppercase tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5 truncate">
+                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                    <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5 truncate">
                       <Sparkles className="w-3.5 h-3.5 text-icy-deep shrink-0" />
                       <span className="truncate">{cs.industry}</span>
                     </span>
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-midnight text-white font-semibold shadow-xs shrink-0">
+                    <span className="text-[9px] sm:text-[10px] font-mono px-2 sm:px-2.5 py-0.5 rounded-full bg-midnight text-white font-semibold shadow-xs shrink-0">
                       {cs.timeframe}
                     </span>
                   </div>
 
-                  {/* Primary Highlight Ticker (Matching Estimated Return on Architecture) */}
-                  <div className="mt-3 pb-5 border-b border-midnight-900/20">
-                    <div className="text-[11px] font-mono uppercase tracking-wider text-midnight-500">
+                  {/* Primary Highlight Ticker */}
+                  <div className="mt-2 sm:mt-3 pb-3 sm:pb-5 border-b border-midnight-900/20">
+                    <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-midnight-500">
                       Primary Production Outcome
                     </div>
-                    <div className="flex items-baseline gap-2 mt-1">
-                      <span className="text-4xl sm:text-5xl font-heading font-bold text-midnight tracking-tight">
+                    <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5 sm:mt-1">
+                      <span className="text-3xl xs:text-4xl sm:text-5xl font-heading font-bold text-midnight tracking-tight">
                         {cs.metrics[0].value}
                       </span>
-                      <span className="text-xs font-mono text-midnight-500 font-semibold">
+                      <span className="text-[11px] sm:text-xs font-mono text-midnight-500 font-semibold">
                         {cs.metrics[0].label}
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-midnight-600 mt-2 line-clamp-2 leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-midnight-600 mt-1.5 line-clamp-2 leading-relaxed font-sans">
                       {cs.headline}
                     </p>
                   </div>
 
-                  {/* 3 Sub-Metrics Grid (Matching ROI Sub-metrics) */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 my-5">
+                  {/* 3 Sub-Metrics: Compact 3-col Grid on Mobile & Desktop */}
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-3 my-3 sm:my-5">
                     {cs.metrics.slice(1, 4).map((m, idx) => (
                       <div
                         key={idx}
-                        className="p-3 sm:p-3.5 rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs flex flex-col justify-between"
+                        className="p-2 xs:p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs flex flex-col justify-between"
                       >
-                        <div className="text-[10px] sm:text-[11px] text-midnight-500 font-sans font-medium line-clamp-1">
+                        <div className="text-[9px] sm:text-[11px] text-midnight-500 font-sans font-medium truncate">
                           {m.label}
                         </div>
-                        <div className="text-lg sm:text-xl font-mono font-bold text-midnight mt-1">
+                        <div className="text-sm xs:text-base sm:text-xl font-mono font-bold text-midnight mt-0.5 sm:mt-1 truncate">
                           {m.value}
                         </div>
-                        <div className="text-[9px] text-midnight-400 font-mono mt-0.5 line-clamp-1">
+                        <div className="text-[8px] sm:text-[9px] text-midnight-400 font-mono mt-0.5 truncate hidden xs:block">
                           {m.sublabel}
                         </div>
                       </div>
@@ -288,23 +284,23 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Footer Attribution & Action Button */}
-                <div className="pt-4 border-t border-midnight-900/20 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="w-8 h-8 rounded-full bg-midnight text-white font-bold text-xs flex items-center justify-center font-heading shrink-0 shadow-2xs">
+                <div className="pt-3 sm:pt-4 border-t border-midnight-900/20 flex items-center justify-between gap-2.5 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-midnight text-white font-bold text-[11px] sm:text-xs flex items-center justify-center font-heading shrink-0 shadow-2xs">
                       {cs.quote.author.charAt(0)}
                     </div>
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-midnight leading-tight truncate">
+                      <div className="text-[11px] sm:text-xs font-bold text-midnight leading-tight truncate">
                         {cs.quote.author}
                       </div>
-                      <div className="text-[10px] text-midnight-500 leading-tight truncate">
+                      <div className="text-[9px] sm:text-[10px] text-midnight-500 leading-tight truncate">
                         {cs.quote.role}
                       </div>
                     </div>
                   </div>
                   <Link
                     to={`/case-studies#${cs.id}`}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-midnight text-white text-xs font-semibold hover:bg-midnight-800 transition-colors shadow-xs shrink-0 group/btn"
+                    className="inline-flex items-center gap-1 sm:gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl bg-midnight text-white text-[11px] sm:text-xs font-semibold hover:bg-midnight-800 transition-colors shadow-xs shrink-0 group/btn"
                   >
                     <span>Teardown</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
@@ -319,80 +315,85 @@ export const HomePage: React.FC = () => {
       {/* ─────────────────────────────────────────────────────────────
           SECTION 7: THE 45-MINUTE ENGINEERING CHARTER (Atmospheric Cloudscape)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
-        {/* Rich Cloud Backdrop with Clean Edge Feathering */}
+      <section className="relative pt-10 pb-28 xs:pt-12 xs:pb-36 sm:py-32 px-3.5 xs:px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
+        {/* Rich Cloud Backdrop - Light Ethereal Cloudscape */}
         <div
-          className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-80 z-0"
+          className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-55 sm:opacity-80 z-0"
           style={{
             backgroundImage: `url('/atmospheric_cloud_backdrop.webp')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundPosition: 'center top',
             maskImage:
-              'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 85%, transparent 100%)',
+              'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 88%, transparent 100%)',
             WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 85%, transparent 100%)',
+              'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 88%, transparent 100%)',
           }}
         />
 
-        {/* Atmospheric Daylight Glow (Non-washing) */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-white/85 via-sky-mist/40 to-transparent blur-3xl pointer-events-none z-0" />
+        {/* Daylight Ambient Glow (Bright & Ethereal) */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] sm:w-[1000px] h-[500px] sm:h-[550px] bg-gradient-to-b from-white/95 via-sky-mist/55 to-transparent blur-3xl pointer-events-none z-0" />
 
-        {/* Symmetrical Top & Bottom Soft Blend Overlays into adjacent sky-canvas */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-sky-canvas via-sky-canvas/70 to-transparent pointer-events-none z-0" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-sky-canvas via-sky-canvas/70 to-transparent pointer-events-none z-0" />
+        {/* Soft Blend Overlays into adjacent sky-canvas */}
+        <div className="absolute inset-x-0 top-0 h-16 sm:h-40 bg-gradient-to-b from-sky-canvas via-sky-canvas/40 to-transparent pointer-events-none z-0" />
+        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-40 bg-gradient-to-t from-sky-canvas via-sky-canvas/40 to-transparent pointer-events-none z-0" />
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           {/* Section Eyebrow */}
-          <div className="mb-2 sm:mb-3 text-center">
-            <span className="text-xs sm:text-sm font-mono font-semibold tracking-[0.25em] text-midnight-500 uppercase">
+          <div className="mb-1.5 sm:mb-3 text-center">
+            <span className="text-[11px] sm:text-sm font-mono font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-midnight-500 uppercase">
               ENGINEERING ADVISORY CHARTER
             </span>
           </div>
 
-          {/* Display Giant Headline in Exactly 2 Lines */}
-          <h2 className="text-[clamp(2.1rem,4.2vw,4.1rem)] font-heading font-extrabold text-midnight tracking-tighter leading-[1.08] max-w-4xl mx-auto mb-8 sm:mb-10">
+          {/* Headline - Desktop (100% Original Untouched) */}
+          <h2 className="hidden sm:block text-[clamp(2.1rem,4.2vw,4.1rem)] font-heading font-extrabold text-midnight tracking-tighter leading-[1.08] max-w-4xl mx-auto mb-8 sm:mb-10">
             <span className="block">Reserve Your 45-Minute</span>
             <span className="block">Technical Whiteboarding Session</span>
           </h2>
 
+          {/* Headline - Mobile Only (Compact Single-Screen Impact) */}
+          <h2 className="block sm:hidden text-[1.65rem] xs:text-2xl font-heading font-extrabold text-midnight tracking-tight leading-tight max-w-xl mx-auto mb-3.5">
+            Reserve Your 45-Min Whiteboarding Session
+          </h2>
+
           {/* Large Visual Card Matching Estimated Return on Architecture Design System */}
-          <div className="max-w-4xl lg:max-w-5xl mx-auto p-6 sm:p-9 lg:p-10 flex flex-col justify-between rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 text-left">
+          <div className="max-w-4xl lg:max-w-5xl mx-auto p-3.5 xs:p-4 sm:p-9 lg:p-10 flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_10px_35px_rgba(10,17,40,0.06)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 text-left">
             <div>
               {/* Top Eyebrow with Sparkles & Status Badge */}
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-icy-deep" />
-                  Principal Systems Architecture Review
+              <div className="flex items-center justify-between gap-2 mb-2 sm:mb-0">
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-midnight-500 font-semibold flex items-center gap-1.5 truncate">
+                  <Sparkles className="w-3.5 h-3.5 text-icy-deep shrink-0" />
+                  <span className="truncate">Principal Systems Architecture Review</span>
                 </span>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-midnight-900/20 text-[11px] font-mono text-midnight shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>4 Slots Available This Week</span>
+                <div className="flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/95 border border-midnight-900/20 text-[10px] sm:text-[11px] font-mono text-midnight shadow-2xs shrink-0">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                  <span>4 Slots Left</span>
                 </div>
               </div>
 
               {/* Big Ticker matching Estimated Return on Architecture */}
-              <div className="mt-4 pb-6 border-b border-midnight-900/20">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-midnight-500">
+              <div className="mt-2 sm:mt-4 pb-2.5 sm:pb-6 border-b border-midnight-900/20">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-midnight-500">
                   Session Architecture & Deliverable Window
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 mt-1.5">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-midnight tracking-tight">
+                <div className="flex flex-row items-baseline justify-between gap-2 mt-1">
+                  <div className="flex items-baseline gap-1.5 sm:gap-2">
+                    <span className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-midnight tracking-tight">
                       45 Min
                     </span>
-                    <span className="text-xs sm:text-sm font-mono text-midnight-500 font-semibold">
-                      / 1-on-1 Whiteboard Session
+                    <span className="text-[11px] sm:text-sm font-mono text-midnight-500 font-semibold">
+                      / 1-on-1 Whiteboard
                     </span>
                   </div>
-                  <div className="text-xs font-mono text-midnight-700 bg-white/95 px-3.5 py-1.5 rounded-xl border border-midnight-900/20 shadow-2xs self-start sm:self-auto flex items-center gap-1.5">
-                    <span className="text-midnight-400">Deliverable:</span>
-                    <span className="font-semibold text-midnight">48-Hr Graph Architecture Spec</span>
+                  <div className="text-[10px] sm:text-xs font-mono text-midnight-700 bg-white/95 px-2 py-0.5 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl border border-midnight-900/20 shadow-2xs shrink-0 flex items-center gap-1">
+                    <span className="hidden xs:inline text-midnight-400">Deliverable:</span>
+                    <span className="font-semibold text-midnight">48-Hr Graph Spec</span>
                   </div>
                 </div>
               </div>
 
-              {/* Sub-Metrics Grid (Matching ROI Sub-metrics Style) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+              {/* Sub-Metrics: Desktop 3-Card Grid (100% Original) */}
+              <div className="hidden sm:grid sm:grid-cols-3 gap-4 my-6">
                 <div className="p-4 rounded-2xl bg-white/95 border border-midnight-900/20 shadow-2xs flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-1.5 text-midnight-600 text-xs font-medium">
@@ -438,32 +439,65 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Sub-Metrics: Mobile Ultra-Compact 3-Pill Micro Row */}
+              <div className="grid grid-cols-3 gap-1.5 my-2.5 sm:hidden">
+                <div className="p-2 rounded-xl bg-white/95 border border-midnight-900/20 shadow-2xs text-center flex flex-col items-center justify-center">
+                  <div className="flex items-center gap-1 text-[10px] text-midnight-500 font-mono">
+                    <Clock className="w-3 h-3 text-icy-deep shrink-0" />
+                    <span>Protocol</span>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-midnight truncate mt-0.5">
+                    Engineers Only
+                  </span>
+                </div>
+
+                <div className="p-2 rounded-xl bg-white/95 border border-midnight-900/20 shadow-2xs text-center flex flex-col items-center justify-center">
+                  <div className="flex items-center gap-1 text-[10px] text-midnight-500 font-mono">
+                    <Sparkles className="w-3 h-3 text-icy-deep shrink-0" />
+                    <span>Deliverable</span>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-midnight truncate mt-0.5">
+                    State Machine
+                  </span>
+                </div>
+
+                <div className="p-2 rounded-xl bg-white/95 border border-midnight-900/20 shadow-2xs text-center flex flex-col items-center justify-center">
+                  <div className="flex items-center gap-1 text-[10px] text-midnight-500 font-mono">
+                    <Shield className="w-3 h-3 text-emerald-600 shrink-0" />
+                    <span>Security</span>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-midnight truncate mt-0.5">
+                    Zero Retention
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Email Report Form & Direct Booking CTA */}
-            <div className="pt-5 border-t border-midnight-900/20 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-5">
+            <div className="pt-2.5 sm:pt-5 border-t border-midnight-900/20 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2.5 sm:gap-5">
               <div className="flex-1 max-w-md">
                 <AnimatePresence mode="wait">
                   {!whiteboardSubmitted ? (
-                    <form onSubmit={handleWhiteboardSubmit} className="space-y-1.5">
-                      <label className="text-xs font-medium text-midnight-700 block">
+                    <form onSubmit={handleWhiteboardSubmit} className="space-y-1">
+                      <label className="text-[11px] sm:text-xs font-medium text-midnight-700 block">
                         Receive custom architecture roadmap for this session:
                       </label>
-                      <div className="flex gap-2">
+                      <div className="flex gap-1.5 sm:gap-2">
                         <input
                           type="email"
                           required
                           placeholder="work@company.com"
                           value={whiteboardEmail}
                           onChange={(e) => setWhiteboardEmail(e.target.value)}
-                          className="flex-1 px-4 py-2.5 rounded-full bg-white/95 border border-midnight-900/20 text-xs text-midnight placeholder:text-midnight-400 focus:outline-none focus:ring-2 focus:ring-midnight shadow-2xs"
+                          className="flex-1 px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-full bg-white/95 border border-midnight-900/20 text-xs text-midnight placeholder:text-midnight-400 focus:outline-none focus:ring-2 focus:ring-midnight shadow-2xs"
                         />
                         <button
                           type="submit"
-                          className="p-2.5 rounded-full bg-midnight text-white hover:bg-midnight-800 transition-colors shadow-sm shrink-0 cursor-pointer"
+                          className="p-2 sm:p-2.5 rounded-full bg-midnight text-white hover:bg-midnight-800 transition-colors shadow-sm shrink-0 cursor-pointer"
                           title="Send roadmap"
                         >
-                          <Send className="w-4 h-4" />
+                          <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </button>
                       </div>
                     </form>
@@ -471,21 +505,21 @@ export const HomePage: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-2.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2"
+                      className="p-2 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                      <span>Architecture roadmap dispatched to {whiteboardEmail}!</span>
+                      <span>Roadmap dispatched to {whiteboardEmail}!</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              <div className="shrink-0 flex items-center">
+              <div className="shrink-0 flex items-center mt-1 sm:mt-0">
                 <SpecularButton
                   to="/book"
-                  size="lg"
+                  size="md"
                   variant="dark"
-                  className="w-full sm:w-auto shadow-[0_10px_35px_rgba(10,17,40,0.18)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.28)]"
+                  className="w-full sm:w-auto text-xs sm:text-sm py-2 sm:py-3 shadow-[0_10px_35px_rgba(10,17,40,0.18)] hover:shadow-[0_15px_45px_rgba(10,17,40,0.28)]"
                   icon={<ArrowRight className="w-4 h-4" />}
                 >
                   Schedule 45-Min Architecture Review

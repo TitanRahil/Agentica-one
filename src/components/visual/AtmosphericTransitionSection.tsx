@@ -15,6 +15,9 @@ export const AtmosphericTransitionSection: React.FC<AtmosphericTransitionSection
   headlineLine2 = 'Empirically Proven.',
   description = 'Zero hallucinations. Zero operational drift. Delivering audited mathematical precision and compounding human capital velocity in production.',
 }) => {
+  const [word1 = 'Rigorously', word2 = 'Tested.'] = headlineLine1.split(' ');
+  const [word3 = 'Empirically', word4 = 'Proven.'] = headlineLine2.split(' ');
+
   return (
     <section className="relative py-32 sm:py-44 lg:py-52 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden flex items-center justify-center">
       {/* Rich Cloud Backdrop with Clean Edge Feathering */}
@@ -51,10 +54,33 @@ export const AtmosphericTransitionSection: React.FC<AtmosphericTransitionSection
           </div>
         </div>
 
-        {/* Giant Screen-Filling Headline */}
-        <h2 className="text-[clamp(3.6rem,9.2vw,10.2rem)] font-heading font-extrabold text-midnight tracking-tighter leading-none text-center w-full select-none flex flex-col gap-3 sm:gap-5 lg:gap-6">
+        {/* Giant Screen-Filling Headline - Desktop (Original untouched) */}
+        <h2 className="hidden sm:flex text-[clamp(3.6rem,9.2vw,10.2rem)] font-heading font-extrabold text-midnight tracking-tighter leading-none text-center w-full select-none flex-col gap-3 sm:gap-5 lg:gap-6">
           <span className="block whitespace-nowrap">{headlineLine1}</span>
           <span className="block whitespace-nowrap text-midnight/90">{headlineLine2}</span>
+        </h2>
+
+        {/* Giant Screen-Filling Headline - Mobile Only */}
+        <h2 className="flex sm:hidden text-midnight tracking-tight leading-none w-full select-none flex-col gap-2 text-center">
+          {/* Pair 1: word1 (refined weight, gently left-aligned on mobile) | word2 (enlarged bold scale, right-aligned on mobile) */}
+          <span className="w-full flex flex-col text-center">
+            <span className="block text-left pl-6 xs:pl-8 font-heading font-normal text-midnight-600 text-[clamp(2.35rem,9.5vw,4.5rem)] leading-tight whitespace-nowrap">
+              {word1}
+            </span>
+            <span className="block text-right pr-6 xs:pr-8 font-heading font-extrabold text-midnight text-[clamp(4.15rem,16.5vw,10.2rem)] leading-[0.9] whitespace-nowrap">
+              {word2}
+            </span>
+          </span>
+
+          {/* Pair 2: word3 (refined weight, gently left-aligned on mobile) | word4 (enlarged bold scale, right-aligned on mobile) */}
+          <span className="w-full flex flex-col text-center">
+            <span className="block text-left pl-6 xs:pl-8 font-heading font-normal text-midnight-600 text-[clamp(2.35rem,9.5vw,4.5rem)] leading-tight whitespace-nowrap">
+              {word3}
+            </span>
+            <span className="block text-right pr-6 xs:pr-8 font-heading font-extrabold text-midnight text-[clamp(4.15rem,16.5vw,10.2rem)] leading-[0.9] whitespace-nowrap">
+              {word4}
+            </span>
+          </span>
         </h2>
 
         {/* Center-Aligned Spread Supporting Text Below Header */}

@@ -27,7 +27,7 @@ export const FlagshipBlueprintsCarousel: React.FC = () => {
   }, [handlePrev, handleNext]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto relative px-2 sm:px-4">
+    <div className="w-full max-w-6xl mx-auto relative px-0 xs:px-1 sm:px-4">
       {/* 3D Depth Stage */}
       <div className="relative h-[620px] sm:h-[600px] md:h-[600px] w-full flex items-center justify-center overflow-hidden sm:overflow-visible">
         {solutionsData.map((sol, index) => {
@@ -71,11 +71,11 @@ export const FlagshipBlueprintsCarousel: React.FC = () => {
                 stiffness: 280,
                 damping: 28,
               }}
-              className={`absolute w-[90%] sm:w-[540px] md:w-[600px] top-1/2 ${
+              className={`absolute w-[86%] xs:w-[88%] sm:w-[540px] md:w-[600px] top-1/2 ${
                 position !== 'center' ? 'cursor-pointer hover:opacity-75' : ''
               }`}
             >
-              <div className="h-full rounded-3xl bg-white/95 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 p-6 sm:p-8 text-midnight shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 flex flex-col justify-between select-none group">
+              <div className="h-full rounded-3xl bg-white/95 backdrop-blur-xl border border-midnight-900/35 hover:border-midnight-900/70 p-5 xs:p-6 sm:p-8 text-midnight shadow-[0_15px_45px_rgba(10,17,40,0.12)] transition-all duration-300 flex flex-col justify-between select-none group">
                 <div>
                   {/* Header */}
                   <div className="flex items-center justify-between gap-2 mb-3 sm:mb-3.5">
@@ -174,14 +174,14 @@ export const FlagshipBlueprintsCarousel: React.FC = () => {
           );
         })}
 
-        {/* Flanking Arrow Controls on either side of the center card */}
+        {/* Flanking Arrow Controls on either side of the carousel */}
         <div className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center">
-          <div className="relative w-[90%] sm:w-[540px] md:w-[600px] h-0 flex items-center justify-between">
+          <div className="relative w-full sm:w-[540px] md:w-[600px] h-0 flex items-center justify-between px-0 xs:px-1 sm:px-0">
             <button
               onClick={handlePrev}
               type="button"
               aria-label="Previous Blueprint"
-              className="pointer-events-auto absolute -top-5 sm:-top-6 left-1 sm:left-auto sm:-left-6 md:-left-8 sm:-translate-x-full w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_4px_18px_rgba(10,17,40,0.15)] hover:shadow-xl flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 group backdrop-blur-md"
+              className="pointer-events-auto absolute -top-5 sm:-top-6 left-0 sm:left-auto sm:-left-6 md:-left-8 sm:-translate-x-full w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_4px_18px_rgba(10,17,40,0.15)] hover:shadow-xl flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 group backdrop-blur-md"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-midnight group-hover:text-black transition-colors" />
             </button>
@@ -189,7 +189,7 @@ export const FlagshipBlueprintsCarousel: React.FC = () => {
               onClick={handleNext}
               type="button"
               aria-label="Next Blueprint"
-              className="pointer-events-auto absolute -top-5 sm:-top-6 right-1 sm:right-auto sm:-right-6 md:-right-8 sm:translate-x-full w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_4px_18px_rgba(10,17,40,0.15)] hover:shadow-xl flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 group backdrop-blur-md"
+              className="pointer-events-auto absolute -top-5 sm:-top-6 right-0 sm:right-auto sm:-right-6 md:-right-8 sm:translate-x-full w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-midnight-900/35 hover:border-midnight-900/70 text-midnight shadow-[0_4px_18px_rgba(10,17,40,0.15)] hover:shadow-xl flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 group backdrop-blur-md"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-midnight group-hover:text-black transition-colors" />
             </button>
